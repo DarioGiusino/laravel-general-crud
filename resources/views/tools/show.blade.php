@@ -29,9 +29,11 @@
                 </div>
             </div>
         </div>
-        <div class="text-center">
-            <a href="{{route('tools.destroy', $tool->id)}}" class="btn btn-outline-danger mt-3">Cancella</a>
-        </div>
+        <form action="{{route('tools.destroy', $tool->id)}}" method="POSTS" class="text-center">
+            @csrf
+            @method("DELETE")
+            <button class="btn btn-outline-danger mt-3">Cancella</button>
+        </form>
     </div>
   </section>
 @endsection
