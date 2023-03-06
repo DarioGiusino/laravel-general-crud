@@ -5,20 +5,25 @@
 
 {{-- home content --}}
 @section('content')
-  <div class="container">
-    <div class="row row-cols-4">
-      <div class="col">
-        {{-- card --}}
-        <a href="#">
-          <div class="card" style="width: 18rem;">
-            <img src="https://cdn.thenewstack.io/media/2021/10/4f0ac3e0-visual_studio_code.png" class="card-img-top"
-              alt="...">
-            <div class="card-body">
-              <h2 class="card-text text-center">titolone</h2>
-            </div>
+  <section id="home">
+    <div class="container">
+      <div class="row row-cols-4">
+        @foreach ($tools as $tool)
+          <div class="col mb-3">
+            {{-- card --}}
+            <a href="#">
+              <div class="card">
+                <figure>
+                  <img src="{{ $tool->image_url }}" class="card-img-top" alt="{{ $tool->name }}">
+                </figure>
+                <div class="card-body">
+                  <h2 class="card-text text-center">{{ $tool->name }}</h2>
+                </div>
+              </div>
+            </a>
           </div>
-        </a>
+        @endforeach
       </div>
     </div>
-  </div>
+  </section>
 @endsection
