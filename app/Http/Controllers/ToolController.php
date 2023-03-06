@@ -24,7 +24,7 @@ class ToolController extends Controller
     public function destroy(Tool $tool)
     {
         $tool->delete();
-        return to_route("tools.index")->with("delete", "$tool->name è stato eliminato con successo");
+        return to_route("tools.index");
     }
 
     /* Show the form for editing the specified resource.
