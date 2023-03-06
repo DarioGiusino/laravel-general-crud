@@ -26,4 +26,22 @@ class ToolController extends Controller
         $tool->delete();
         return to_route("tools.index")->with("delete", "$tool->name è stato eliminato con successo");
     }
+
+    /* Show the form for editing the specified resource.
+     */
+    public function edit(Tool $tool)
+    {
+        return view('tools.edit', compact('tool'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, Tool $tool)
+    {
+        $data = $request->all();
+        $tool->fill($data);
+        $tool->save();
+        return to_route('tools.show', $tool->id);
+    }
 }
