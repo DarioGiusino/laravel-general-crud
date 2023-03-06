@@ -16,9 +16,9 @@ class ToolController extends Controller
         $tools = Tool::all();
         return view('tools.index', compact('tools'));
     }
-    public function show(string $id)
+
+    public function show(Tool $tool)
     {
-        $tool = Tool::findOrFail($id);
         return view("tools.show", compact("tool"));
     }
 

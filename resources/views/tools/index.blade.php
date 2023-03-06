@@ -33,12 +33,13 @@
               {{-- buttons --}}
               <td class="text-end">
                 {{-- show button {{route(tools.show), $tool->id}} --}}
-                <a class="btn btn-small btn-primary" href="#"><i class="fa-solid fa-folder-open"></i></a>
+                <a class="btn btn-small btn-primary" href="{{ route('tools.show', $tool->id) }}"><i
+                    class="fa-solid fa-folder-open"></i></a>
                 {{-- edit button {{route(tools.edit), $tool->id}} --}}
-                <a class="btn btn-small btn-warning text-white" href="#"><i
+                <a class="btn btn-small btn-warning text-white" href="{{ route('tools.edit', $tool->id) }}"><i
                     class="fa-solid fa-pen-to-square"></i></a>
                 {{-- delete button {{route(tools.destroy), $tool->id}} --}}
-                <form class="d-inline" action="{{route('tools.destroy', $tool->id)}}" method="POST">
+                <form class="d-inline" action="{{ route('tools.destroy', $tool->id) }}" method="POST">
                   {{-- cross site request forgery --}}
                   @csrf
                   {{-- custom method delete --}}
@@ -50,6 +51,11 @@
           @endforeach
         </tbody>
       </table>
+
+      {{-- add button  --}}
+      <div class="text-center">
+        <a class="btn btn-small btn-success" href="{{ route('tools.create') }}"><i class="fa-solid fa-plus"></i></a>
+      </div>
     </div>
   </section>
 @endsection
