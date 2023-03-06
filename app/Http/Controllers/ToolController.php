@@ -15,4 +15,10 @@ class ToolController extends Controller
         $tools = Tool::all();
         return view('tools.index', compact('tools'));
     }
+
+    public function destroy(Tool $tool)
+    {
+        $tool->delete();
+        return to_route("tools.index")->with("delete", "$tool->name è stato eliminato con successo");
+    }
 }
