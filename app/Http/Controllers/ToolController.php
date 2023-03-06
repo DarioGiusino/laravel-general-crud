@@ -13,6 +13,6 @@ class ToolController extends Controller
     public function index()
     {
         $tools = Tool::all();
-        return view('home', compact('tools'));
+        return view('tools.index', compact('tools'));
     }
 }
