@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
 <head>
   <meta charset="UTF-8">
@@ -14,7 +14,7 @@
 
 <body>
   <header>
-    @yield('header')
+    @include('includes.header')
   </header>
 
   <main>
