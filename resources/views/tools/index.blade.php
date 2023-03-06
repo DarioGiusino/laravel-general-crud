@@ -32,12 +32,12 @@
               <td>{{ $tool->vote }}</td>
               {{-- buttons --}}
               <td class="text-end">
-                {{-- show button --}}
+                {{-- show button {{route(tools.show), $tool->id}} --}}
                 <a class="btn btn-small btn-primary" href="#"><i class="fa-solid fa-folder-open"></i></a>
-                {{-- edit button --}}
+                {{-- edit button {{route(tools.edit), $tool->id}} --}}
                 <a class="btn btn-small btn-warning text-white" href="#"><i
                     class="fa-solid fa-pen-to-square"></i></a>
-                {{-- delete button --}}
+                {{-- delete button {{route(tools.destroy), $tool->id}} --}}
                 <form class="d-inline" action="" method="post">
                   {{-- cross site request forgery --}}
                   @csrf
