@@ -32,10 +32,19 @@
               <td>{{ $tool->vote }}</td>
               {{-- buttons --}}
               <td class="text-end">
+                {{-- show button --}}
                 <a class="btn btn-small btn-primary" href="#"><i class="fa-solid fa-folder-open"></i></a>
+                {{-- edit button --}}
                 <a class="btn btn-small btn-warning text-white" href="#"><i
                     class="fa-solid fa-pen-to-square"></i></a>
-                <a class="btn btn-small btn-danger" href="#"><i class="fa-solid fa-trash"></i></a>
+                {{-- delete button --}}
+                <form class="d-inline" action="" method="post">
+                  {{-- cross site request forgery --}}
+                  @csrf
+                  {{-- custom method delete --}}
+                  @method('DELETE')
+                  <button class="btn btn-small btn-danger" href="#"><i class="fa-solid fa-trash"></i></button>
+                </form>
               </td>
             </tr>
           @endforeach
