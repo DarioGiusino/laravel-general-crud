@@ -28,7 +28,7 @@
             <tr>
               <th scope="row">{{ $tool->name }}</th>
               <td>{{ $tool->category }}</td>
-              <td>v {{ $tool->latest_version }}</td>
+              <td> {{ $tool->latest_version }}</td>
               <td>{{ $tool->vote }}</td>
               {{-- buttons --}}
               <td class="text-end">
@@ -38,12 +38,12 @@
                 <a class="btn btn-small btn-warning text-white" href="#"><i
                     class="fa-solid fa-pen-to-square"></i></a>
                 {{-- delete button {{route(tools.destroy), $tool->id}} --}}
-                <form class="d-inline" action="" method="post">
+                <form class="d-inline" action="{{route('tools.destroy', $tool->id)}}" method="POST">
                   {{-- cross site request forgery --}}
                   @csrf
                   {{-- custom method delete --}}
                   @method('DELETE')
-                  <button class="btn btn-small btn-danger" href="#"><i class="fa-solid fa-trash"></i></button>
+                  <button type="submit" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></button>
                 </form>
               </td>
             </tr>
