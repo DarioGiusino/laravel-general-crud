@@ -6,7 +6,7 @@
 {{-- home content --}}
 @section('content')
   <section id="show">
-    <div class="container text-center">
+    <div class="container">
         <div class="d-flex justify-content-center">
             <div class="card overflow-hidden w-75">
                 <div class="w-100 d-flex ">
@@ -29,9 +29,9 @@
                 </div>
             </div>
         </div>
-        <a href="
-        {{-- {{route('tools.destroy')}} --}}
-        " class="btn btn-outline-danger mt-3">Cancella</a>
+        <div class="text-center">
+            <a href="{{route('tools.destroy', $tool->id)}}" class="btn btn-outline-danger mt-3">Cancella</a>
+        </div>
     </div>
   </section>
 @endsection
