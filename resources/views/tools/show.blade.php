@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-        <form action="{{route('tools.destroy', $tool->id)}}" method="POSTS" class="text-center">
+        <form action="{{route('tools.destroy', $tool->id)}}" method="POST" class="text-center">
             @csrf
             @method("DELETE")
             <button class="btn btn-outline-danger mt-3">Cancella</button>
