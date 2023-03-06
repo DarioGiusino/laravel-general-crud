@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ToolController;
+use App\Models\Tool;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+// route per creazione (1 step)
+Route::get('tools/create', [ToolController::class, 'create'])->name('tools.create');
+// route per creazione (2 step)
+Route::post('/tools', [ToolController::class, 'store'])->name('tools.store');
