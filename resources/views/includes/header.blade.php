@@ -11,7 +11,8 @@
           <a class="nav-link @if (Route::is('home')) active @endif" href="{{ url('/') }}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Tools</a>
+          <a class="nav-link @if (Route::is('tools.index')) active @endif"
+            href="{{ route('tools.index') }}">Tools</a>
         </li>
       </ul>
     </div>
