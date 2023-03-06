@@ -21,7 +21,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 // tools index route
 Route::get('/tools', [ToolController::class, 'index'])->name('tools.index');
 Route::get('/tools/{tool}', [ToolController::class, 'show'])->name('tools.show');
-Route::delete("/tools/{tools}", [ToolController::class, "destroy"])->name("tools.destroy");
+Route::delete("/tools/{tool}", [ToolController::class, "destroy"])->name("tools.destroy");
 Route::get('/tools/{tool}/edit', [ToolController::class, 'edit'])->name('tools.edit');
 Route::put('/tools/{tool}', [ToolController::class, 'update'])->name('tools.update');
 // route per creazione (1 step)
