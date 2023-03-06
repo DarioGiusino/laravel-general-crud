@@ -7,11 +7,13 @@
     <div class="container">
       <table class="table">
         <thead>
+          {{-- table first row (title of column) --}}
           <tr>
             <th scope="col">Name</th>
             <th scope="col">Category</th>
+            <th scope="col">Latest version</th>
             <th scope="col">Vote</th>
-            <th scope="col">Commands</th>
+            <th scope="col" class="text-end">Commands</th>
           </tr>
         </thead>
         <tbody>
@@ -19,8 +21,14 @@
             <tr>
               <th scope="row">{{ $tool->name }}</th>
               <td>{{ $tool->category }}</td>
+              <td>v {{ $tool->latest_version }}</td>
               <td>{{ $tool->vote }}</td>
-              <td></td>
+              {{-- buttons --}}
+              <td class="text-end">
+                <a class="btn btn-small btn-primary" href="#">Vedi</a>
+                <a class="btn btn-small btn-warning" href="#">Modifica</a>
+                <a class="btn btn-small btn-danger" href="#">Cancella</a>
+              </td>
             </tr>
           @endforeach
         </tbody>
