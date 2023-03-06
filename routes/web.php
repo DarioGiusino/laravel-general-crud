@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ToolController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/tools/{tool}/edit', [ToolController::class, 'edit'])->name('tools.edit');
+Route::put('/tools/{tool}', [ToolController::class, 'update'])->name('tools.update');
