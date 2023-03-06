@@ -32,9 +32,10 @@
               <td>{{ $tool->vote }}</td>
               {{-- buttons --}}
               <td class="text-end">
-                <a class="btn btn-small btn-primary" href="#">Vedi</a>
-                <a class="btn btn-small btn-warning" href="#">Modifica</a>
-                <a class="btn btn-small btn-danger" href="#">Cancella</a>
+                <a class="btn btn-small btn-primary" href="#"><i class="fa-solid fa-folder-open"></i></a>
+                <a class="btn btn-small btn-warning text-white" href="#"><i
+                    class="fa-solid fa-pen-to-square"></i></a>
+                <a class="btn btn-small btn-danger" href="#"><i class="fa-solid fa-trash"></i></a>
               </td>
             </tr>
           @endforeach
